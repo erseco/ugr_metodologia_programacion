@@ -1,0 +1,18 @@
+# Fichero: makefile_ppal1.mak
+# Construye el ejecutable
+
+bin/saludo : obj/opers.o
+
+	g++ obj/ppal_1.o -o bin/saludo
+
+
+obj/opers.o : src/opers.cpp
+
+	g++ -c src/opers.cpp -o obj/opers.o -Iinclude
+
+
+	g++ -c -o obj/ppal_1.o src/ppal_1.cpp -I./include
+
+	g++ -c -o obj/opers.o src/opers.cpp -Iinclude
+	
+	g++ -o bin/ppa_1 obj/ppal_1.o obj/opers.o
